@@ -23,5 +23,5 @@ dependencies {
 
 test {
     useTestNG()
-    test.finalizedBy(allureServe)
+    //test.finalizedBy(allureServe)
 }
