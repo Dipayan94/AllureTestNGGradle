@@ -1,0 +1,28 @@
+name: E2E Functional Tests
+
+on:
+  workflow_dispatch:
+    inputs:
+      platform:
+        description: "Select the platform"
+        required: true
+        type: choice
+        options:
+          - android
+          - ios
+      suite:
+        description: "Select the Test suite to run"
+        required: true
+        default: "smoke"
+        type: choice
+        options:
+          - smoke
+          - regression
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: git checkout
+        uses: actions/checkout@v3
+      - name: install dotenv
+        uses: actions/setup-node@v3
