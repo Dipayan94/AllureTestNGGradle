@@ -10,6 +10,7 @@ on:
         options:
           - android
           - ios
+          - windows
       suite:
         description: "Select the Test suite to run"
         required: true
